@@ -48,11 +48,11 @@ class Doppler:
                 
   def getSpeed(self) -> float:
     data = self.ser.readline()
-    print(len(data))
+    # print(len(data))
     data = data.decode('utf-8')
     if "-" in data:
       data.replace("-", "")
-      print(print('-' + data))
+      print(print('-' + float(data)))
     elif data.isnumeric():
       print(float(data))
                 
