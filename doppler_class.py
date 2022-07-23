@@ -55,7 +55,7 @@ class Doppler:
       # print(negative)
       if len(negative) > 1:
         speed = float(negative[1])
-        print(speed)
+        print(speed * -1)
       else:
         speed = float(decoded_data)
         print(speed)
