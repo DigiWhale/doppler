@@ -50,7 +50,7 @@ class Doppler:
     data = self.ser.readline()
     print(len(data))
     data = data.decode('utf-8')
-    if data.isNumeric():
+    if data.isnumeric():
       print(float(data))
                 
 while __name__ == '__main__':
