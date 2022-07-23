@@ -59,8 +59,8 @@ class Doppler:
       else:
         speed = float(decoded_data)
         print(speed)
-    except:
-      pass
+    except Exception as e:
+      print(e)
                 
 while __name__ == '__main__':
   doppler = Doppler()
