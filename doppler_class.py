@@ -50,11 +50,11 @@ class Doppler:
     data = self.ser.readline()
     # print(len(data))
     data = data.decode('utf-8')
-    if "-" in data:
-      neg = data.replace("-", "")
-      print('-', float(neg))
-    else:
-      print('+', data)
+    try:
+      negative = data.split('-')
+      print(negative)
+    except:
+      pass
                 
 while __name__ == '__main__':
   doppler = Doppler()
