@@ -52,7 +52,7 @@ class Doppler:
     data = data.decode('utf-8')
     if "-" in data:
       data.replace("-", "")
-      print(print('-' + float(data)))
+      print(print('-', float(data)))
     elif data.isnumeric():
       print(float(data))
                 
