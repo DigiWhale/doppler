@@ -50,7 +50,7 @@ class Doppler:
     data = self.ser.readline()
     # print(len(data))
     decoded_data = data.decode('utf-8')
-    print('original', decoded_data)
+    # print('original', decoded_data)
     try:
       negative = decoded_data.split('-')
       # print(negative)
@@ -61,7 +61,8 @@ class Doppler:
         speed = float(decoded_data)
         print(speed + 0.27)
     except Exception as e:
-      print(e)
+      # print(e)
+      pass
                 
 while __name__ == '__main__':
   doppler = Doppler()
