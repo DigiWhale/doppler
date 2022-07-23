@@ -51,8 +51,8 @@ class Doppler:
     # print(len(data))
     data = data.decode('utf-8')
     if "-" in data:
-      data.replace("-", "")
-      print(print('-', float(data)))
+      neg = data.replace("-", "")
+      print(print('-', float(neg)))
     elif data.isnumeric():
       print(float(data))
                 
