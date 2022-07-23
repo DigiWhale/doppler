@@ -49,10 +49,13 @@ class Doppler:
   def getSpeed(self) -> float:
     data = self.ser.readline()
     # print(len(data))
-    data = data.decode('utf-8')
+    decoded_data = data.decode('utf-8')
     try:
-      negative = data.split('-')
+      negative = decoded_data.split('-')
       print(negative)
+      if len(negative) > 1:
+        speed = float(negative[1])
+        print(speed)
     except:
       pass
                 
