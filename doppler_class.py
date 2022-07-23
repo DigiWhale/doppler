@@ -54,7 +54,7 @@ class Doppler:
       neg = data.replace("-", "")
       print(print('-', float(neg)))
     elif data.isnumeric():
-      print(float(data))
+      print('+', data)
                 
 while __name__ == '__main__':
   doppler = Doppler()
