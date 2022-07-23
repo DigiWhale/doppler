@@ -52,7 +52,7 @@ class Doppler:
     decoded_data = data.decode('utf-8')
     try:
       negative = decoded_data.split('-')
-      print(negative)
+      # print(negative)
       if len(negative) > 1:
         speed = float(negative[1])
         print(speed)
