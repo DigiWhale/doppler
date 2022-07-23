@@ -50,6 +50,7 @@ class Doppler:
     data = self.ser.readline()
     # print(len(data))
     decoded_data = data.decode('utf-8')
+    print('original', decoded_data)
     try:
       negative = decoded_data.split('-')
       # print(negative)
