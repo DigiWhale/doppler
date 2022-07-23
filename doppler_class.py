@@ -31,7 +31,7 @@ class Doppler:
   def sendSerCmd(self, descrStr, commandStr) :
     data_for_send_str = commandStr
     data_for_send_bytes = str.encode(data_for_send_str)
-    print(descrStr, commandStr)
+    # print(descrStr, commandStr)
     self.ser.write(data_for_send_bytes)
     # Initialize message verify checking
     ser_message_start = '{'
@@ -52,7 +52,7 @@ class Doppler:
     data = data.decode('utf-8')
     if "-" in data:
       neg = data.replace("-", "")
-      print(print('-', float(neg)))
+      print('-', float(neg))
     elif data.isnumeric():
       print('+', data)
                 
