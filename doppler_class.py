@@ -49,7 +49,9 @@ class Doppler:
   def getSpeed(self) -> float:
     data = self.ser.readline()
     print(len(data))
-    print(float(data.decode('utf-8')))
+    data = data.decode('utf-8')
+    if data.isNumeric():
+      print(float(data))
                 
 while __name__ == '__main__':
   doppler = Doppler()
