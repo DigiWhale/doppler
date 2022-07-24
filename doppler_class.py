@@ -43,7 +43,7 @@ class Doppler:
         if (data_rx_length != 0) :
             data_rx_str = str(data_rx_bytes)
             if data_rx_str.find(ser_message_start) :
-                # print(data_rx_str)
+                print(data_rx_str)
                 ser_write_verify = True
                 
   def getSpeed(self) -> float:
