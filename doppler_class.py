@@ -13,7 +13,7 @@ class Doppler:
     )
     self.speed_units = 'US'
     self.direction_control = 'Od'
-    self.sampling_freq = 'S2'
+    self.sampling_freq = 'SC'
     self.tx_power = 'PX'
     self.threshold = 'QI'
     self.module_info = '??'
