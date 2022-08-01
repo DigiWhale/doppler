@@ -46,6 +46,10 @@ class Doppler:
                 print(data_rx_str)
                 ser_write_verify = True
                 
+  def write_speed_to_file(self, speed):
+    with open('speed.txt', 'w+') as f:
+      f.write(str(speed))
+                
   def getSpeed(self) -> float:
     data = self.ser.readline()
     # print(len(data))
