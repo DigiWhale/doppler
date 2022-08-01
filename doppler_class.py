@@ -48,7 +48,11 @@ class Doppler:
                 
   def write_speed_to_file(self, speed):
     with open('speed.txt', 'a+') as f:
-      f.write(str(speed))
+      f.write(str(speed) + ', ')
+      
+  def create_speed_file(self):
+    with open('speed.txt', 'w') as f:
+      f.write('')
                 
   def getSpeed(self) -> float:
     data = self.ser.readline()
@@ -72,6 +76,7 @@ class Doppler:
                 
 while __name__ == '__main__':
   doppler = Doppler()
+  doppler.create_speed_file()
   while True:
     doppler.getSpeed()
   
