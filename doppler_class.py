@@ -47,11 +47,11 @@ class Doppler:
                 ser_write_verify = True
                 
   def write_speed_to_file(self, speed):
-    with open('speed.txt', 'a+') as f:
+    with open('/home/pi/doppler/speed.txt', 'a+') as f:
       f.write(str(speed) + ', ')
       
   def create_speed_file(self):
-    with open('speed.txt', 'w') as f:
+    with open('/home/pi/doppler/speed.txt', 'w') as f:
       f.write('')
                 
   def getSpeed(self) -> float:
