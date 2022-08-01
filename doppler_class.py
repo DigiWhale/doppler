@@ -61,9 +61,11 @@ class Doppler:
       if len(negative) > 1:
         speed = float(negative[1])
         print(speed * -1)
+        self.write_speed_to_file(speed * -1)
       else:
         speed = float(decoded_data)
         print(speed)
+        self.write_speed_to_file(speed)
     except Exception as e:
       # print(e)
       pass
