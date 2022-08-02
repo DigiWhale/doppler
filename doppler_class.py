@@ -29,6 +29,7 @@ class Doppler:
     self.sendSerCmd("\nSet Threshold Control: ", self.threshold)
     self.sendSerCmd("\nSet Data Accuracy: ", self.data_accuracy)
     self.sendSerCmd("\nModule Information: ", self.module_info)
+    self.count = 0
     
   def sendSerCmd(self, descrStr, commandStr) :
     data_for_send_str = commandStr
@@ -51,14 +52,13 @@ class Doppler:
   def write_speed_to_file(self, speed):
     with open('/home/pi/doppler/speed.csv', 'a+') as f:
       writer = csv.writer(f)
-      writer.writerow([speed, datetime.now()])
-      # f.write(str(speed) + ', ')
+      self.count += 1
+      writer.writerow([speed, self.count])
       
   def create_speed_file(self):
     with open('/home/pi/doppler/speed.csv', 'w') as f:
       writer = csv.writer(f)
-      writer.writerow(['speed', 'datetime'])
-      # f.write('speed, timestamp')
+      writer.writerow(['speed', 'count'])
                 
   def getSpeed(self) -> float:
     data = self.ser.readline()
