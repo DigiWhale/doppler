@@ -1,5 +1,6 @@
 import serial
 import csv
+from datetime import datetime
 
 class Doppler:
   def __init__(self) -> None:
@@ -50,12 +51,12 @@ class Doppler:
   def write_speed_to_file(self, speed):
     with open('/home/pi/doppler/speed.csv', 'a+') as f:
       writer = csv.writer(f)
-      writer.writerow([speed])
+      writer.writerow([speed, datetime.now()])
       # f.write(str(speed) + ', ')
       
   def create_speed_file(self):
     with open('/home/pi/doppler/speed.csv', 'w') as f:
-      f.write('')
+      f.write('speed, timestamp')
                 
   def getSpeed(self) -> float:
     data = self.ser.readline()
