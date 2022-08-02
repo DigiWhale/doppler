@@ -1,4 +1,5 @@
 import serial
+import csv
 
 class Doppler:
   def __init__(self) -> None:
@@ -47,11 +48,13 @@ class Doppler:
                 ser_write_verify = True
                 
   def write_speed_to_file(self, speed):
-    with open('/home/pi/doppler/speed.txt', 'a+') as f:
-      f.write(str(speed) + ', ')
+    with open('/home/pi/doppler/speed.csv', 'a+') as f:
+      writer = csv.writer(f)
+      writer.writerow([speed])
+      # f.write(str(speed) + ', ')
       
   def create_speed_file(self):
-    with open('/home/pi/doppler/speed.txt', 'w') as f:
+    with open('/home/pi/doppler/speed.csv', 'w') as f:
       f.write('')
                 
   def getSpeed(self) -> float:
