@@ -51,6 +51,8 @@ class Doppler:
                 
   def write_speed_to_file(self, speed):
     with open('/home/pi/doppler/speed.csv', 'a+') as f:
+      if speed == 1.36 or speed == -1.36:
+        speed = 0
       writer = csv.writer(f)
       self.count += 1
       writer.writerow([speed, self.count])
