@@ -56,7 +56,9 @@ class Doppler:
       
   def create_speed_file(self):
     with open('/home/pi/doppler/speed.csv', 'w') as f:
-      f.write('speed, timestamp')
+      writer = csv.writer(f)
+      writer.writerow(['speed', 'datetime'])
+      # f.write('speed, timestamp')
                 
   def getSpeed(self) -> float:
     data = self.ser.readline()
